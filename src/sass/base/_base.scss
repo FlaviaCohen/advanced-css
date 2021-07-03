@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; /* GP - It will inherit body style */
+}
+
+/* Root style, reference for REM unit */
+html {
+  // 1rem setup
+  font-size: 62.5%; /* GP - 10px (what we want) * 16px (default root-font-size) / 100 */
+}
+
+body {
+  box-sizing: border-box;
+}

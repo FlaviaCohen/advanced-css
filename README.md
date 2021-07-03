@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+BLOCK ELEMENT MODIFIER (how to name classes)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+.block {}
+.block__element {}
+.block__element--modifier{}
 
-## Available Scripts
+ARQUITECTURE (7-1 PATTERN)
 
-In the project directory, you can run:
+7 folders that contains partial files and 1 file called "main.scss" that imports all the other files. 
+This partial files will be imported on the mail.scss file.
+Partial files' names always begin with _ (ex: _base)
 
-### `yarn start`
+- abstracts/ : Where we put code that doesn't output any CSS (variables, mixins)
+    _functions.scss
+    _mixins.scss
+    _variables.scss
+- base/ : Basic product definitions
+    _animations.scss
+    _base.scss
+    _typography.scss
+    _utils.scss : utils classes (for ex: "u-center-text" is a class tu center text children)
+- components/ : Where there is one file for each component
+- layout/ : Where we define overall layout for the project (global footer, header, etc)
+- pages/ : Styles for specific pages of the project
+- themes/ : Diferent visual themes
+- vendors/ : For all third party CSS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Relative units
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+PERCENTAGE
+fonts -> font-size: 150% (the element will have a font-size 150% larger than the parent computed font-size)
+lenghts -> padding: 10% (the element will have a padding of 10% the parent computed width)
 
-### `yarn test`
+EMS (based in font-size)
+fonts -> font-size: 3em (the element will have a font-size 3 times larger than the parent computed font-size)
+lenght -> padding: 2em (the element will have a padding of 2 times the current element font-size)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+REMS (based in root font-size, usually 16px)
+fonts and length -> margin: 10rem (the element will have a margin of 10 times the root computed font-size)
 
-### `yarn build`
+VH (% of viewport height)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+VW (% of viewport width)
