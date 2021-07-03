@@ -8,7 +8,7 @@ import nat8 from "./img/nat-8.jpg";
 import nat9 from "./img/nat-9.jpg";
 import videoMp4 from "./img/video.mp4";
 import videoWebm from "./img/video.webm";
-
+import logoGreen from "./img/logo-green-2x.png";
 
 const App = () => {
   return (
@@ -248,11 +248,15 @@ const App = () => {
         </section>
 
         <section className="section-stories">
-
           <div className="bg-video">
-            <video className="bg-video__content" autoPlay="true" muted="true" loop>
-              <source src={videoMp4} type="video/mp4"/>
-              <source src={videoWebm} type="video/webm"/>
+            <video
+              className="bg-video__content"
+              autoPlay="true"
+              muted="true"
+              loop
+            >
+              <source src={videoMp4} type="video/mp4" />
+              <source src={videoWebm} type="video/webm" />
               Your browser is not supported!
             </video>
           </div>
@@ -266,7 +270,7 @@ const App = () => {
           <div className="row">
             <div className="story">
               <figure className="story__shape">
-                <img className="story__img" src={nat8} alt="Person on a tour"/>
+                <img className="story__img" src={nat8} alt="Person on a tour" />
                 <figcaption className="story__caption">Mary Smith</figcaption>
               </figure>
               <div className="story__text">
@@ -286,7 +290,7 @@ const App = () => {
           <div className="row">
             <div className="story">
               <figure className="story__shape">
-                <img className="story__img" src={nat9} alt="Person on a tour"/>
+                <img className="story__img" src={nat9} alt="Person on a tour" />
                 <figcaption className="story__caption">Jack Wilson</figcaption>
               </figure>
               <div className="story__text">
@@ -304,10 +308,129 @@ const App = () => {
           </div>
 
           <div className="u-center-text u-margin-top-huge">
-            <a href="#" className="btn-text">Read all stories &rarr;</a>
+            <a href="#" className="btn-text">
+              Read all stories &rarr;
+            </a>
+          </div>
+        </section>
+
+        <section className="section-book">
+          <div className="row">
+            <div className="book">
+              <div className="book__form">
+                <form className="form" action="#">
+                  <div className="u-margin-bottom-medium">
+                    <h2 class="heading-secondary">Start booking now</h2>
+                  </div>
+                  <div className="form__group">
+                    <input
+                      id="name"
+                      type="text"
+                      className="form__input"
+                      placeholder="Full Name"
+                      required
+                    />
+                    <label for="name" className="form__label">
+                      Full Name
+                    </label>
+                  </div>
+                  <div className="form__group">
+                    <input
+                      id="email"
+                      type="email"
+                      className="form__input"
+                      placeholder="Email address"
+                      required
+                    />
+                    <label for="email" className="form__label">
+                      Full Name
+                    </label>
+                    <div className="form__group">
+                      <div className="form__radio-group u-margin-bottom-medium">
+                        <input
+                          type="radio"
+                          className="form__radio-input"
+                          id="small"
+                          name="size"
+                        />
+                        <label for="small" className="form__radio-label">
+                          <span className="form__radio-button"></span>
+                          Small tour group
+                        </label>
+                      </div>
+                      <div className="form__radio-group u-margin-bottom-medium">
+                        <input
+                          type="radio"
+                          className="form__radio-input"
+                          id="large"
+                          name="size"
+                        />
+                        <label for="large" className="form__radio-label">
+                          <span className="form__radio-button"></span>
+                          Large tour group
+                        </label>
+                      </div>
+
+                      <div className="form__group">
+                        <button className="btn btn--green">
+                          Next step &rarr;
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
       </main>
+      <footer className="footer">
+        <div className="footer__logo-box">
+          <img src={logoGreen} alt="Full logo" className="footer__logo" />
+        </div>
+        <div className="row">
+          <div className="col-1-of-2">
+            <div className="footer__navigation">
+              <ul className="footer__list">
+                <li className="footer__item">
+                  <a href="#" className="footer__link">
+                    Company
+                  </a>
+                </li>
+                <li className="footer__item">
+                  <a href="#" className="footer__link">
+                    Contanct us
+                  </a>
+                </li>
+                <li className="footer__item">
+                  <a href="#" className="footer__link">
+                    Carrers
+                  </a>
+                </li>
+                <li className="footer__item">
+                  <a href="#" className="footer__link">
+                    Privacy policy
+                  </a>
+                </li>
+                <li className="footer__item">
+                  <a href="#" className="footer__link">
+                    Terms
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-1-of-2">
+            <p className="footer__copyright">
+              Built by Flavia Cohen from{" "}
+              <a href="#" className="footer__link">
+                Jonas Schmedtmann online course Advanced CSS and Sass
+              </a>
+              . Copyright &copy; by Jonas Schmedtmann
+            </p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 };
