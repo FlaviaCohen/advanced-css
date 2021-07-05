@@ -1,28 +1,79 @@
 import "./sass/app.scss";
-//import "./css/icon-font.css";
 import logo from "./img/logo-white.png";
-import nat1 from "./img/nat-1-large.jpg";
-import nat2 from "./img/nat-2-large.jpg";
-import nat3 from "./img/nat-3-large.jpg";
+import nat1 from "./img/nat-1.jpg";
+import nat1Large from "./img/nat-1-large.jpg";
+import nat2 from "./img/nat-2.jpg";
+import nat2Large from "./img/nat-2-large.jpg";
+import nat3 from "./img/nat-3.jpg";
+import nat3Large from "./img/nat-3-large.jpg";
 import nat8 from "./img/nat-8.jpg";
 import nat9 from "./img/nat-9.jpg";
 import videoMp4 from "./img/video.mp4";
 import videoWebm from "./img/video.webm";
-import logoGreen from "./img/logo-green-2x.png";
+import logoGreen1x from "./img/logo-green-1x.png";
+import logoGreen2x from "./img/logo-green-2x.png";
+/* import logoGreenSmall1x from "./img/logo-green-small-1x.png";
+import logoGreenSmall2x from "./img/logo-green-small-1x.png"; */
 
 const App = () => {
   return (
     <>
+      <div className="navigation">
+        <input
+          type="checkbox"
+          className="navigation__checkbox"
+          id="navi-toggle"
+        />
+        <label for="navi-toggle" className="navigation__button">
+          <span className="navigation__icon">&nbsp;</span>
+        </label>
+
+        <div className="navigation__background">&nbsp;</div>
+
+        <nav className="navigation__nav">
+          <ul className="navigation__list">
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>01</span>About Natours
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>02</span>
+                Your benefits
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>03</span>
+                Popular tours
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>04</span>
+                Stories
+              </a>
+            </li>
+            <li className="navigation__item">
+              <a href="#" className="navigation__link">
+                <span>05</span>
+                Book now
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <header className="header">
         <div className="header__logo-box">
           <img className="header__logo" src={logo} alt="Logo" />
         </div>
         <div className="header__text-box">
           <h1 className="heading-primary">
-            <span className="heading-primary--main">Outdoor</span>
+            <span className="heading-primary--main">Outdoors</span>
             <span className="heading-primary--sub">Is where life happens</span>
           </h1>
-          <a href="#" className="btn btn--white btn--animated">
+          <a href="#section-tours" className="btn btn--white btn--animated">
             Discover our tours
           </a>
         </div>
@@ -32,7 +83,7 @@ const App = () => {
         <section className="section-about">
           <div className="u-center-text u-margin-bottom-large">
             <h2 class="heading-secondary">
-              Exciting tours for adenturous people
+              Exciting tours for adventurous people
             </h2>
           </div>
           <div className="row">
@@ -63,19 +114,25 @@ const App = () => {
             <div className="col-1-of-2">
               <div className="composition">
                 <img
-                  className="composition__photo composition__photo--p1"
-                  src={nat1}
+                  srcSet={`${nat1} 300w, ${nat1Large} 1000w`}
+                  sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                   alt="Photo 1"
+                  class="composition__photo composition__photo--p1"
+                  src={nat1Large}
                 />
                 <img
-                  className="composition__photo composition__photo--p2"
-                  src={nat2}
+                  srcSet={`${nat2} 300w, ${nat2Large} 1000w`}
+                  sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                   alt="Photo 2"
+                  class="composition__photo composition__photo--p2"
+                  src={nat2Large}
                 />
                 <img
-                  className="composition__photo composition__photo--p3"
-                  src={nat3}
+                  srcSet={`${nat3} 300w, ${nat3Large} 1000w`}
+                  sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
                   alt="Photo 3"
+                  class="composition__photo composition__photo--p3"
+                  src={nat3Large}
                 />
               </div>
             </div>
@@ -136,7 +193,7 @@ const App = () => {
           </div>
         </section>
 
-        <section className="section-tours">
+        <section className="section-tours" id="section-tours">
           <div className="u-center-text u-margin-bottom-large">
             <h2 class="heading-secondary">Most popular tours</h2>
           </div>
@@ -167,7 +224,7 @@ const App = () => {
                       <p className="card__price-only">Only</p>
                       <p className="card__price-value">$279</p>
                     </div>
-                    <a href="#" className="btn btn--white">
+                    <a href="#popup" className="btn btn--white">
                       Book now!
                     </a>
                   </div>
@@ -199,7 +256,7 @@ const App = () => {
                       <p className="card__price-only">Only</p>
                       <p className="card__price-value">$497</p>
                     </div>
-                    <a href="#" className="btn btn--white">
+                    <a href="#popup" className="btn btn--white">
                       Book now!
                     </a>
                   </div>
@@ -231,7 +288,7 @@ const App = () => {
                       <p className="card__price-only">Only</p>
                       <p className="card__price-value">$897</p>
                     </div>
-                    <a href="#" className="btn btn--white">
+                    <a href="#popup" className="btn btn--white">
                       Book now!
                     </a>
                   </div>
@@ -386,7 +443,11 @@ const App = () => {
       </main>
       <footer className="footer">
         <div className="footer__logo-box">
-          <img src={logoGreen} alt="Full logo" className="footer__logo" />
+          <img
+            srcSet={`${logoGreen1x} 1x, ${logoGreen2x} 2x`}
+            alt="Full logo"
+            className="footer__logo"
+          />
         </div>
         <div className="row">
           <div className="col-1-of-2">
@@ -431,6 +492,41 @@ const App = () => {
           </div>
         </div>
       </footer>
+
+      <div className="popup" id="popup">
+        <div className="popup__content">
+          <div className="popup__left">
+            <img className="popup__img" src={nat8} alt="Tour photo" />
+            <img className="popup__img" src={nat9} alt="Tour photo" />
+          </div>
+          <div className="popup__right">
+            <a href="#section-tours" className="popup__close">
+              &times;
+            </a>
+            <h2 className="heading-secondary u-margin-bottom-small">
+              Start booking now
+            </h2>
+            <h3 className="heading-tertiary u-margin-bottom-small">
+              Important &ndash; Please read these terms before booking
+            </h3>
+            <p className="popup__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum. Lorem ipsum dolor
+              sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+              ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+              voluptate velit esse cillum.
+            </p>
+            <a href="#" className="btn btn--green">
+              Book now
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

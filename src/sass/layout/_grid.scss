@@ -6,10 +6,16 @@
   &:not(:last-child) {
     // al rows except last child
     margin-bottom: $gutter-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $gutter-vertical-small;
+    }
   }
 
-  
-
+  @include respond(tab-port) {
+    max-width: 50rem;
+    padding: 0 3rem;
+  }
   // brackets allows to select an attribute of the elements
   // the ^ symbol means "attributes that starts with ..." (in this case "all the classes that starts with col-"
   // ^ = starts with
@@ -20,6 +26,14 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include respond(tab-port) {
+      width: 100% !important;
     }
   }
 

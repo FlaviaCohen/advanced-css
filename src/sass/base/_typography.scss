@@ -1,6 +1,5 @@
 /* Font style is inherit by default. Giving the body a certain style is the easiest way to style all fonts */
 body {
-  padding: 3rem; /* 30px / 10px (root-font-size) = 3 rem */
   font-family: "Lato", sans-serif;
   font-weight: 400;
   /* font-size: 16px; */
@@ -26,6 +25,9 @@ body {
 
     /* animation-iteration-count: 3; number of times animation repeats */
     /* animation-delay: 3s; Time that takes animation to start */
+    @include respond(phone) {
+      letter-spacing: 1rem;
+    }
   }
 
   &--sub {
@@ -37,6 +39,10 @@ body {
     animation-name: moveInRight;
     animation-duration: 1s;
     animation-timing-function: ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
   }
 }
 
@@ -48,6 +54,14 @@ body {
   letter-spacing: 2px;
   transition: all 0.2s;
   @include text-gradient;
+
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
 
   &:hover {
     transform: skewY(2deg) skewX(15deg) scale(1.1);
@@ -65,6 +79,6 @@ body {
   font-size: $default-font-size;
 
   &:not(:last-child) {
-    margin-bottom: 3rem; 
+    margin-bottom: 3rem;
   }
 }
