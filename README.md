@@ -1,24 +1,26 @@
+https://advanced-css-project.herokuapp.com/
+
 BLOCK ELEMENT MODIFIER (how to name classes)
 
 .block {}
-.block**element {}
-.block**element--modifier{}
+.block__element {}
+.block__element--modifier{}
 
 ARQUITECTURE (7-1 PATTERN)
 
 7 folders that contains partial files and 1 file called "main.scss" that imports all the other files.
 This partial files will be imported on the mail.scss file.
-Partial files' names always begin with \_ (ex: \_base)
+Partial files' names always begin with _ (ex: _base)
 
 - abstracts/ : Where we put code that doesn't output any CSS (variables, mixins)
-  \_functions.scss
-  \_mixins.scss
-  \_variables.scss
+  _functions.scss
+  _mixins.scss
+  _variables.scss
 - base/ : Basic product definitions
-  \_animations.scss
-  \_base.scss
-  \_typography.scss
-  \_utils.scss : utils classes (for ex: "u-center-text" is a class tu center text children)
+  _animations.scss
+  _base.scss
+  _typography.scss
+  _utils.scss : utils classes (for ex: "u-center-text" is a class tu center text children)
 - components/ : Where there is one file for each component
 - layout/ : Where we define overall layout for the project (global footer, header, etc)
 - pages/ : Styles for specific pages of the project
