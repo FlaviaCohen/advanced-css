@@ -485,7 +485,7 @@ const App = () => {
             <p className="footer__copyright">
               Built by Flavia Cohen from{" "}
               <a href="#" className="footer__link">
-                Jonas Schmedtmann online course Advanced CSS and Sass
+                Jonas Schmedtmann <span>online course Advanced CSS and SASS</span>
               </a>
               . Copyright &copy; by Jonas Schmedtmann
             </p>
