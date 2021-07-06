@@ -102,4 +102,7 @@ When diferent images are used depending on the resolution
     <img srcSet={`${logoGreenSmall1x} 1x, ${logoGreenSmall2x} 2x`} alt="Full logo"/>
 </picture>
 ```
-````
+
+FLEX BOX
+
+flex: 0 0 300px; // flex-grow (how much the element can grouw), flex-shrink (how much the element can shrink), flex-basis (width    ); 
